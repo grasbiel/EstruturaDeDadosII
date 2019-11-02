@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
 public class ManipuladorDeDados {
 	
 	public static List <Integer> leitorDeDados(String nomeArquivo) { // ESTE MÉTODO FAZ A LEITURA
@@ -35,6 +34,7 @@ public class ManipuladorDeDados {
 	} //FIM LEITOR DE DADOS
 	
 	public static void escreverResultadoEmArquivo (int qtdElementos, String nomeArquivo, Integer [] vetor ) throws IOException {
+		// Método que irá escrever elementos em um arquivo TXT já criado
 		
 		BufferedWriter buff = new BufferedWriter (new FileWriter(nomeArquivo)); 
 
@@ -42,9 +42,11 @@ public class ManipuladorDeDados {
 				buff.append(vetor[i] + "\n");
 			}
 		buff.close();
-	}// Método que irá escrever elementos em um arquivo TXT já criado
+	}
 	
 	public static void gerarNumerosAleatorios (int qtdElementos, String nomeArquivo) throws IOException {
+		// Método que irá criar um arquivo com a quantidade de elementos 
+		// passada como parâmetro
 		
 		BufferedWriter buff = new BufferedWriter (new FileWriter(nomeArquivo));
 		//wri = new FileWriter (nomeArquivo);
@@ -53,6 +55,28 @@ public class ManipuladorDeDados {
 			buff.append(gerador.nextInt()+"\n");
 		}
 		buff.close();
-	}// Método que irá criar um arquivo com a quantidade de elementos 
-	// passada como parâmetro
-}
+	} // Fim do Método GerarNumerosAleatorios
+	
+	public static void calcularMedias (long [][] matriz, int linha, int coluna, int qtdElementos) throws IOException {
+		int vet[] = new int [coluna];
+		BufferedWriter buff = new BufferedWriter (new FileWriter ("Media.txt"));
+		for (int k=0; k<coluna; k++)
+		{		
+			for (int i=0; i<linha; i++) {
+				for (int j=0; j<coluna; j++) {
+					if (k==j) {
+						vet[k] += matriz[i][j]; // Soma o numero de tempo e coloca num espaço
+					}
+				}
+			} 
+		} 
+		buff.append("Medias obtidas após coleta de amostras:\n"); //Essa frase vai ser tirada depois
+		for (int x=0; x<coluna; x++) {
+			vet[x] = vet[x]/linha;
+			buff.append(qtdElementos +": " + vet[x] +"\n");
+			qtdElementos += 10000;
+		} // Calcula a média
+		
+		buff.close();
+	} // Fim CalcularMedias
+} //Fim Class ManipuladorDeDados
