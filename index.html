@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>Chart Js - Graphics </title>
+        <script src="chart.js"></script>
+    </head>
+    <body>
+        <canvas class="line-chart"></canvas>
+
+        <script>
+            var ctx = document.getElementsByClassName("line-chart");
+            var chartGraph  = new Chart (ctx,  {
+                type: 'line',
+                data: {
+                    labels: ["Jan", "Fevereiro"],
+                    datasets: [{
+                        labels: "Taxa de Cliques 2017",
+                        data: [2,3],
+                        borderwidth: 6, 
+                        bordercolo
+                    }]
+                }
+            });
+        </script>""
+    </body>
+
+</html>
