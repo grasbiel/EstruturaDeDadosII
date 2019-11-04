@@ -9,8 +9,8 @@ import selection.Selection;
 public class Test {
 	
 	public static void main (String[] args) throws IOException {
-		int TOTALREPETICOES =2; // QUANTIDADE DE VEZES QUE O ALGORITMO IR� REPETIR AS ORDENA합ES
-		int TOTALAMOSTRAS = 5; // QUANTIDADE DE AMOSTRAS POR ORDENA플O
+		int TOTALREPETICOES =50; // QUANTIDADE DE VEZES QUE O ALGORITMO IR� REPETIR AS ORDENA합ES
+		int TOTALAMOSTRAS = 10; // QUANTIDADE DE AMOSTRAS POR ORDENA플O
 		
 		
 		long [][] armazenarDados = new long [TOTALREPETICOES][TOTALAMOSTRAS];	

@@ -8,7 +8,28 @@
     </head>
     <body>
         <canvas class="line-chart"></canvas>
+        <script>
+            var numsList = [];
+            $.ajax( 'medias.txt', {
+                dataType: 'text',
+                success: function(response){
+                    //response é o conteudo do arquivo.txt
+                    var lines = response.split('\n'); //quebra o arquivo em linhas, 
+                    for(var i in lines){
+                        var row = lines[i];
+                        var nums = row.split(','); //quebra a linha em valores separdos por virgula
+                        for(var j in nums){
+                            var num = parseInt(nums[j]); //converte o valor para int
+                            if( !isNaN(num) ) //basicamente verifica se é um numero
+                                numsList.push(num); //adiciona o item no array
+                        }
+                    }
 
+                    console.log(numsList);
+                }
+            });
+        </script>
+        
         <script>
             var ctx = document.getElementsByClassName("line-chart");
             var chartGraph  = new Chart (ctx,  {

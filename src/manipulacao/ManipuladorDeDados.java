@@ -59,7 +59,7 @@ public class ManipuladorDeDados {
 	
 	public static void calcularMedias (long [][] matriz, int linha, int coluna, int qtdElementos) throws IOException {
 		int vet[] = new int [coluna];
-		BufferedWriter buff = new BufferedWriter (new FileWriter ("Media.txt"));
+		BufferedWriter buff = new BufferedWriter (new FileWriter ("medias.txt"));
 		for (int k=0; k<coluna; k++)
 		{		
 			for (int i=0; i<linha; i++) {
@@ -70,7 +70,7 @@ public class ManipuladorDeDados {
 				}
 			} 
 		} 
-		buff.append("Medias obtidas após coleta de amostras:\n"); //Essa frase vai ser tirada depois
+		//buff.append("Medias obtidas após coleta de amostras:\n"); //Essa frase vai ser tirada depois
 		for (int x=0; x<coluna; x++) {
 			vet[x] = vet[x]/linha;
 			buff.append(qtdElementos +": " + vet[x] +"\n");
