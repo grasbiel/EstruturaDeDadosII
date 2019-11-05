@@ -73,7 +73,7 @@ public class ManipuladorDeDados {
 		//buff.append("Medias obtidas após coleta de amostras:\n"); //Essa frase vai ser tirada depois
 		for (int x=0; x<coluna; x++) {
 			vet[x] = vet[x]/linha;
-			buff.append(qtdElementos +": " + vet[x] +"\n");
+			buff.append(qtdElementos +": " + (vet[x]*0.0001) +"\n");
 			qtdElementos += 10000;
 		} // Calcula a média
 		
