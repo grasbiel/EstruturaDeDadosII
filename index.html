@@ -3,48 +3,52 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        <title>Chart Js - Graphics </title>
+        <title>Estrutura de Dados II </title>
         <script src="chart.js"></script>
     </head>
     <body>
-        <canvas class="line-chart"></canvas>
-        <script>
-            var numsList = [];
-            $.ajax( 'medias.txt', {
-                dataType: 'text',
-                success: function(response){
-                    //response é o conteudo do arquivo.txt
-                    var lines = response.split('\n'); //quebra o arquivo em linhas, 
-                    for(var i in lines){
-                        var row = lines[i];
-                        var nums = row.split(','); //quebra a linha em valores separdos por virgula
-                        for(var j in nums){
-                            var num = parseInt(nums[j]); //converte o valor para int
-                            if( !isNaN(num) ) //basicamente verifica se é um numero
-                                numsList.push(num); //adiciona o item no array
-                        }
-                    }
+       <canvas class="line-chart"></canvas>
 
-                    console.log(numsList);
-                }
-            });
-        </script>
-        
+       <div width="300px", height="100px">
         <script>
             var ctx = document.getElementsByClassName("line-chart");
+
+              //DATA, TYPE E OPTIONS
             var chartGraph  = new Chart (ctx,  {
                 type: 'line',
                 data: {
-                    labels: ["Jan", "Fevereiro"],
-                    datasets: [{
-                        labels: "Taxa de Cliques 2017",
-                        data: [2,3],
-                        borderwidth: 6, 
-                        bordercolo
-                    }]
+                    labels: ["10000", "20000", "30000", "40000", "50000", "600000","70000", "80000","90000","100000"],
+                    datasets: [
+                      {
+                        label: "Selection Sort",
+                        data: [97,305,610,1011,1549,2756,3525,4011,5035,7107],
+                        borderWidth: 6,
+                        borderColor: 'rgba(77,166,253,0.85)',
+                        backgroundColor: 'transparent'
+                    },
+                    {
+                      label: "Heap Sort",
+                      data: [5,10,13,18,29,32,35,40,46,65],
+                      borderWidth: 6,
+                      borderColor: 'rgba(6,204,6,0.85)',
+                      backgroundColor: 'transparent'
+                    },
+                  ]
+                },
+                options: {
+                  title: {
+                    display: true,
+                    FontSize: 20,
+                    text: "Análise de Complexidade Algoritmíca"
+                  },
+                  labels: {
+                    fontStyle: "bold"
+                  },
                 }
+
             });
-        </script>""
+        </script>
+      </div>
     </body>
 
 </html>
